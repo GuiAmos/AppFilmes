@@ -1,0 +1,7 @@
+{
+  "name": "appTela",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
