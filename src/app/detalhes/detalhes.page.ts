@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router';
+import { FilmesService } from '../service/filmes.service'; /*Aqui*/
 
 
 @Component({
@@ -10,13 +11,28 @@ import {Router} from '@angular/router';
 })
 export class DetalhesPage implements OnInit {
 
-  constructor(private route: ActivatedRoute, private rota: Router) { }
+    filmes:any = [];
+    destaque:any = [];
+
+  constructor(private route: ActivatedRoute, private rota: Router, 
+    /*Aqui */private filmesService: FilmesService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.nameRecebido = params['name'];
+      /*Aqui this.filmesService.Detalhes();*/
     })
+
+    this.Detalhes();
  }
 
- nameRecebido:string = '';
+ /*Aqui*/async Detalhes(){
+  this.filmes = await this.filmesService.Detalhes(14/*this.id*/);
+  console.log("filmes carregados", this.filmes)
+
+  
+}
+
+nameRecebido:string = '';
+  
 }

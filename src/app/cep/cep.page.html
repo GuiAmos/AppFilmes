@@ -1,0 +1,39 @@
+<div class="flex-col children-center grow space-30" >
+
+  <fieldset class="flex-col space-30">
+
+    <legend>Busca</legend>
+    
+      <div class="flex-col">
+        <small>CEP</small>
+        <input type="text" [(ngModel)]="cep">
+     </div>
+
+    <button class="button primary" (click)="buscarEndereco ()" >BUSCAR ENDEREÇO</button>
+
+  </fieldset>
+
+  <fieldset class="flex-col space-30">
+    <legend>Resultado</legend>
+    <div class="flex-col">
+      <small>Estado</small>
+      <input type="text" [(ngModel)]="estado">
+    </div>
+
+    <div class="flex-col">
+      <small>Cidade</small>
+      <input type="text" [(ngModel)]="cidade">
+    </div>
+
+    <div class="flex-col">
+      <small>Bairro</small>
+      <input type="text" [(ngModel)]="bairro">
+    </div>
+
+    <div class="flex-col">
+      <small>Lagradouro</small>
+      <input type="text" [(ngModel)]="lagradouro">
+    </div>
+
+  </fieldset>  
+</div>

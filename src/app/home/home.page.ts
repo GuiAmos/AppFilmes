@@ -9,6 +9,10 @@ import { FilmesService } from '../service/filmes.service';
 })
 export class HomePage {
 
+  filmes:any = [];
+    destaque:any = [];
+
+
   constructor(private router: Router,
     private filmesService: FilmesService) {}
 
@@ -17,13 +21,15 @@ export class HomePage {
     this.carregarFilmes();
     //this.filmesService.getProductions();
   }
+
   async carregarFilmes(){
     this.filmes = await this.filmesService.getProductions();
     console.log("filmes carregados", this.filmes)
+
     const [firstkey] = Object.keys(this.filmes);
     this.destaque = this.filmes[firstkey];
 
-    this.filmesService.splice(firstkey, 1)
+    this.filmes.splice(firstkey, 1)
     console.log('firstkey', firstkey)
     console.log('destque',this.destaque)
     console.log('filmes', this.filmes)

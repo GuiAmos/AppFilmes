@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'detalhes',
     loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
   },
+  {
+    path: 'detalhes/:id',
+    loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
+  },
+  {
+    path: 'cep',
+    loadChildren: () => import('./cep/cep.module').then( m => m.CepPageModule)
+  },
 ];
 
 @NgModule({

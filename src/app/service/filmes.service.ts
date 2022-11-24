@@ -27,5 +27,26 @@ export class FilmesService {
         });
   });
 }
+
+/* Aqui */
+  Detalhes(id){
+  console.log('no Detalhes');
+  return new Promise((resolve, reject) => {
+    this.http.get('http://lmcapifilmes.herokuapp.com/api/production/' + id, {})    
+    .subscribe
+      ( (data: any) => {
+        console.log("retorno",data.Production);          
+        return resolve(data.Production)
+
+      }), (error => {
+        return reject(error)
+        console.log(error.status);
+        console.log(error.error); // error message as string
+        console.log(error.headers);
+
+      });
+});
+}
+
 }
 
